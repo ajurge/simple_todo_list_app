@@ -11,7 +11,7 @@ npm install
 npm start
 ```
 
-Visit <http://localhost:8000/>. Try opening multiple tabs or browser windows and add/delete the TODOs!
+Visit <http://localhost:8000/>. Try opening multiple tabs or browser windows and add/delete TODOs!
 
 ## Changing the port
 
