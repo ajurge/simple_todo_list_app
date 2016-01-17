@@ -2,7 +2,7 @@
 
 ## To use
 
-Node.js is used to serve static files from `public/` and handle requests to `/api/todos` to fetch or add data. Start a server with the following:
+Node.js is used to serve static files from `public/` and handle requests to the REST API (`/api/todos`) to fetch or delete TODOs. Socket.IO is used to create TODOs and for realtime updates to the clients using the WebSocket protocol. Start a server with the following:
 
 ### Node
 
@@ -11,7 +11,7 @@ npm install
 npm start
 ```
 
-And visit <http://localhost:8000/>. Try opening multiple tabs or browser windows and add/delete the TODOs!
+Visit <http://localhost:8000/>. Try opening multiple tabs or browser windows and add/delete the TODOs!
 
 ## Changing the port
 
