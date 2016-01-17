@@ -1,0 +1,16 @@
+{
+  "name"         : "simple-todo-list-app",
+  "version"      : "1.0.0",
+  "description"  : "A simple TODO list application in React",
+  "author"       : "Audrius Jurgelionis",
+  "main"         : "server.js",
+  "dependencies" : {
+    "socket.io"       : "~1.3.4",
+    "express"         : "~4.11.2",
+    "morgan"          : "~1.6.1",
+    "body-parser"     : "~1.4.3",
+    "method-override" : "~2.1.1",
+    "node-uuid"       : "~1.4.7",
+    "ip"              : "~1.1.0"
+  }
+}
