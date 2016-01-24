@@ -129,8 +129,8 @@ var Todo = React.createClass({
 				<div className="panel-body">
 					<kbd>TODO:</kbd> {this.props.todo.text}
 				</div>
-				<div className="panel-footer">
-					<div><button className="btn btn-sm btn-danger" type="delete" ref="deleteButton" onClick={this.props.deleteTodo.bind(this, this.props.todo.id)}>Delete</button></div>
+				<div className="panel-footer clearfix">
+					<div><button className="btn btn-sm btn-danger pull-right" type="delete" ref="deleteButton" onClick={this.props.deleteTodo.bind(this, this.props.todo.id)}>Delete</button></div>
 				</div>
 			</div>
 
