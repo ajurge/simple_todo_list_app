@@ -63,7 +63,7 @@ var TodoBox = React.createClass({
 	},
 	render: function() {
 		return (
-			<div className="todoBox">
+			<div>
 				<TodoHeading todos={this.state.todos}/>
 				<TodoList todos={this.state.todos} deleteTodo={this.deleteTodo}/>
 				<TodoForm submitTodo={this.submitTodo}/>
@@ -75,11 +75,17 @@ var TodoBox = React.createClass({
 
 var TodoHeading = React.createClass({
 	render: function () {
-		var Heading3 = (<h3>TODOs (Loading....):</h3>);
+		var Heading3 = (
+				<div className="jumbotron text-center">
+					<h1>TODOs <span className="label label-info">Loading....</span></h1>
+				</div>
+			);
 		var that = this;
 		if (this.props.todos) {
 			return (
-				<h3>TODOs ({that.props.todos.length}):</h3>
+				<div className="jumbotron text-center">
+					<h1>TODOs <span className="label label-info">{that.props.todos.length}</span></h1>
+				</div>
 			);
 		}
 		return (
@@ -99,8 +105,10 @@ var TodoList = React.createClass({
 			});
 		}
 		return (
-			<div className="todoList">
-				{Todos}
+			<div id="todo-list" className="row marketing">
+				<div className="col-sm-12">
+					{Todos}
+				</div>
 			</div>
 		);
 	}
@@ -110,11 +118,18 @@ var TodoList = React.createClass({
 var Todo = React.createClass({
 	render: function () {
 		return (
-			<div className="todo">
-				<span className="author">{this.props.todo.author}</span> TODO:<br/>
-				<div className="body">{this.props.todo.text}</div>
-				<div className="body"><button type="delete" ref="deleteButton" onClick={this.props.deleteTodo.bind(this, this.props.todo.id)}>Delete</button></div>
+			<div className="panel panel-default">
+				<div className="panel-heading">
+					<h3 className="panel-title">{this.props.todo.author} <kbd>TODO:</kbd></h3>
+				</div>
+				<div className="panel-body">
+					{this.props.todo.text}
+				</div>
+				<div className="panel-footer">
+					<div><button className="btn btn-sm btn-danger" type="delete" ref="deleteButton" onClick={this.props.deleteTodo.bind(this, this.props.todo.id)}>Delete</button></div>
+				</div>
 			</div>
+
 		);
 	}
 });
@@ -139,11 +154,17 @@ var TodoForm = React.createClass({
 	},
 	render: function () {
 		return (
-			<form className="todoForm" onSubmit={this.handleSubmit}>
-				<input type="text" name="author" ref="author" placeholder="Name" required /><br/>
-				<textarea name="text" ref="text" placeholder="Todo" required></textarea><br/>
-				<button type="submit" ref="submitButton">Post a TODO</button>
-			</form>
+			<div id="todo-form" className="row">
+				<div className="col-sm-8 col-sm-offset-2 text-center">
+					<form onSubmit={this.handleSubmit}>
+						<div className="form-group">
+							<input type="text" name="author" ref="author" className="form-control input-lg text-left" placeholder="Name" required />
+							<textarea name="text" ref="text" className="form-control input-lg text-left" placeholder="Todo" required></textarea>
+						</div>
+						<button type="submit" className="btn btn-primary btn-lg" ref="submitButton">Post a TODO</button>
+					</form>
+				</div>
+			</div>
 		);
 	}
 });
