@@ -120,10 +120,10 @@ var Todo = React.createClass({
 		return (
 			<div className="panel panel-default">
 				<div className="panel-heading">
-					<h3 className="panel-title">{this.props.todo.author} <kbd>TODO:</kbd></h3>
+					<h3 className="panel-title">{this.props.todo.author}</h3>
 				</div>
 				<div className="panel-body">
-					{this.props.todo.text}
+					<kbd>TODO:</kbd> {this.props.todo.text}
 				</div>
 				<div className="panel-footer">
 					<div><button className="btn btn-sm btn-danger" type="delete" ref="deleteButton" onClick={this.props.deleteTodo.bind(this, this.props.todo.id)}>Delete</button></div>
