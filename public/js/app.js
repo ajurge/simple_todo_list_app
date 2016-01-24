@@ -97,7 +97,11 @@ var TodoHeading = React.createClass({
 
 var TodoList = React.createClass({
 	render: function () {
-		var Todos = (<div>Loading TODOs...</div>);
+		var Todos = (
+				<p className="text-center">
+					<span className="fa fa-spinner fa-spin fa-3x"></span>
+				</p>
+			);
 		var that = this;
 		if (this.props.todos) {
 			Todos = this.props.todos.map(function (todo) {
