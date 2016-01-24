@@ -1,5 +1,7 @@
 # Simple TODO List App
 
+A simple TODO list web application built using React, Bootstrap and Node.js.
+
 ## To use
 
 Node.js is used to serve static files from `public/` and handle requests to the REST API (`/api/todos`) to fetch or delete TODOs. Socket.IO is used to create TODOs and for realtime updates to the clients using the WebSocket protocol. Start a server with the following:
